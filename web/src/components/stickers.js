@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+// import Cards from "../components/card"
 import styled from "styled-components"
 
 export default () => {
@@ -14,7 +15,7 @@ export default () => {
             title
             mainImage {
               asset {
-                fixed {
+                fixed(height: 120, width: 120) {
                   src
                 }
               }
@@ -28,14 +29,36 @@ export default () => {
     }
   `)
   return (
-    <div>
+    <Container>
       {data.allSanitySticker.edges.map(({ node: item }) => (
-        <Link to={`/${item.slug.current}`}>
-          <img src={item.mainImage.asset.fixed.src} alt="" />
+        <Cards>
           <h2>{item.title}</h2>
-          <small>{item.price}</small>
-        </Link>
+          <Link key={item.id} to={`/${item.slug.current}`}>
+            <img src={item.mainImage.asset.fixed.src} alt="" />
+          </Link>
+          {/* <p>{item.info}</p> */}
+          <small>${item.price}</small>
+        </Cards>
       ))}
-    </div>
+    </Container>
   )
 }
+
+const Cards = styled.div`
+  background: #3b3b3b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  width: 200px;
+  display: grid;
+  padding: 0 0 1rem 0;
+  justify-content: center;
+  text-align: center;
+  grid-template-rows: 1fr 140px;
+`
+
+const Container = styled.div`
+  justify-items: center;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+`

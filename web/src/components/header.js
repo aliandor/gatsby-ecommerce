@@ -5,8 +5,10 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header>
     <div>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
+      <h1 style={{ paddingLeft: "1rem" }}>
+        <Link to="/" style={{ color: "rgba(255, 255, 255, 0.9)" }}>
+          {siteTitle}
+        </Link>
       </h1>
     </div>
   </header>

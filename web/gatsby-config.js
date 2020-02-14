@@ -1,11 +1,18 @@
 module.exports = {
   siteMetadata: {
     title: `Web Dev Stickers`,
-    description: `A sticker E-Commerce site built in gatsby, snipcart and sanity.io`,
+    description: `A sticker E-Commerce site built with gatsby, snipcart and sanity.io`,
     author: `Alfonso Galang`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: "f7g7zioq",
+        dataset: "production",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,7 +32,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/web-dev.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

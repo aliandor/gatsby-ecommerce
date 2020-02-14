@@ -24,6 +24,16 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      name: "price",
+      title: "Price",
+      type: "number"
+    },
+    {
+      name: "info",
+      title: "Info",
+      type: "string"
     }
   ],
 

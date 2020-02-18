@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "ecommerce"
+    "name": "E-Commerce with Gatsby"
   },
   "api": {
-    "projectId": "f7g7zioq",
+    "projectId": "azyrpqqa",
     "dataset": "production"
   },
   "plugins": [
@@ -12,19 +12,10 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
-    }
-  },
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema.js"
-    }
+    "@sanity/dashboard",
+    "@sanity/desk-tool",
+    "dashboard-widget-structure-menu",
+    "dashboard-widget-document-list",
+    "dashboard-widget-netlify"
   ]
 }

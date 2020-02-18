@@ -7,6 +7,13 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-plugin-snipcartv3",
+      options: {
+        apiKey: `ZmZlN2M5YzMtOWMyMy00ODBiLWFmZjItZmRiYWQ5OTY2Mjc0NjM3MTYwMDc5MTIxODYxMTA0`,
+        autopop: false,
+      },
+    },
+    {
       resolve: `gatsby-source-sanity`,
       options: {
         projectId: "f7g7zioq",

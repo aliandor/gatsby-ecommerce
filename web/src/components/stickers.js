@@ -33,10 +33,10 @@ export default () => {
       {data.allSanitySticker.edges.map(({ node: item }) => (
         <Cards>
           <h2>{item.title}</h2>
-          <Link key={item.id} to={`/${item.slug.current}`}>
+          <Link to={`/${item.slug.current}`}>
             <img src={item.mainImage.asset.fixed.src} alt="" />
           </Link>
-          {/* <p>{item.info}</p> */}
+          <p>{item.info}</p>
           <small>${item.price}</small>
         </Cards>
       ))}

@@ -2,31 +2,64 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
+import Icon from "../images/Vector.png"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header>
-    <div>
-      <h1 style={{ paddingLeft: "1rem" }}>
-        <Link to="/" style={{ color: "rgba(255, 255, 255, 0.9)" }}>
-          {siteTitle}
+    <Wrapper>
+      <h1>
+        <Link to="/">
+          Dev<span>Stickers</span>
         </Link>
       </h1>
-      <Cart href="#" className="snipcart-summary snipcart-checkout">
-        <div>
-          Cart <span className="snipcart-total-items"></span>
-        </div>
+      <Cart className="snipcart-checkout">
+        <img src={Icon} alt="cart icon" />
+        <span className="snipcart-items-count" />
       </Cart>
-    </div>
+    </Wrapper>
   </header>
 )
-const Cart = styled.a`
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  /* border: 2px solid tomato; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  h1 {
+    a {
+      color: #fff;
+      font-weight: 500;
+      span {
+        color: #3fc1c9;
+      }
+    }
+  }
+`
+
+const Cart = styled.button`
+  background: none;
+  border: none;
   color: #fff;
+  padding-right: 1rem;
+  position: fixed;
+  right: 1rem;
+  img {
+    width: 32px;
+  }
   span {
-    font-size: 12px;
-    color: tomato;
+    /* background: tomato; */
+    color: #3fc1c9;
+    padding: 0.15rem;
+    border-radius: 5px;
+    font-size: 14px;
     font-weight: bold;
     position: absolute;
-    transform: translateX(6px) translateY(-6px);
+    transform: translateY(-6px) translateX(6px);
   }
 `
 

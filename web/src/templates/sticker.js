@@ -10,6 +10,7 @@ export const query = graphql`
         current
       }
       title
+      _id
       mainImage {
         asset {
           fixed {
@@ -35,10 +36,10 @@ export default ({ data }) => {
           <h2>{item.title}</h2>
           <img src={item.mainImage.asset.fixed.src} alt="" />
           <p>{item.info}</p>
-          <small>{item.price}</small>
+          <small>${item.price}</small>
           <button
             className="snipcart-add-item"
-            data-item-id={item.slug}
+            data-item-id={item._id}
             data-item-price={item.price}
             data-item-image={item.mainImage.asset.fixed.src}
             data-item-name={item.title}
@@ -67,6 +68,20 @@ const Card = styled.div`
   border-radius: 5px;
   padding: 1rem;
   text-align: center;
+  display: grid;
+  grid-row-gap: 0.5rem;
+  justify-items: center;
+  small {
+    padding-bottom: 0.5rem;
+  }
+  button {
+    background: #3fc1c9;
+    border: none;
+    padding: 0.5rem;
+    width: 50%;
+    border-radius: 5px;
+  }
+
   img {
     width: 100%;
     max-width: 160px;

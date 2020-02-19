@@ -10,7 +10,7 @@ const IndexPage = () => (
   <Layout>
     <Wrapper>
       <SEO title="Home" />
-      <h1>Hi people</h1>
+      <h2>Stickers for every developer</h2>
       <div>
         <Stickers />
       </div>
@@ -22,7 +22,7 @@ export default IndexPage
 
 const Wrapper = styled.div`
   padding: 1rem;
-  h1 {
+  h2 {
     text-align: center;
   }
 `

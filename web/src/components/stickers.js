@@ -1,6 +1,5 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-// import Cards from "../components/card"
+import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 
 export default () => {
@@ -21,7 +20,7 @@ export default () => {
               }
             }
             info
-            id
+            _id
             price
           }
         }
@@ -33,11 +32,19 @@ export default () => {
       {data.allSanitySticker.edges.map(({ node: item }) => (
         <Cards>
           <h2>{item.title}</h2>
-          <Link to={`/${item.slug.current}`}>
-            <img src={item.mainImage.asset.fixed.src} alt="" />
-          </Link>
+          <img src={item.mainImage.asset.fixed.src} alt="" />
           <p>{item.info}</p>
           <small>${item.price}</small>
+          <button
+            className="snipcart-add-item"
+            data-item-id={item._id}
+            data-item-price={item.price}
+            data-item-image={item.mainImage.asset.fixed.src}
+            data-item-name={item.title}
+            data-item-url={`/${item.slug.current}`}
+          >
+            add to cart
+          </button>
         </Cards>
       ))}
     </Container>
@@ -51,9 +58,16 @@ const Cards = styled.div`
   width: 200px;
   display: grid;
   padding: 0 0 1rem 0;
-  justify-content: center;
+  justify-items: center;
+
   text-align: center;
-  grid-template-rows: 1fr 140px;
+  grid-template-rows: 1fr 140px 40px 40px 40px;
+  button {
+    background: #3fc1c9;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
 `
 
 const Container = styled.div`

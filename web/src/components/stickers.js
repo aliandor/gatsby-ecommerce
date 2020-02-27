@@ -59,9 +59,9 @@ const Cards = styled.div`
   display: grid;
   padding: 0 0 1rem 0;
   justify-items: center;
-
+  /* align-items: end; */
   text-align: center;
-  grid-template-rows: 1fr 140px 40px 40px 40px;
+  grid-template-rows: 1fr 140px 1fr 40px 40px;
   button {
     background: #3fc1c9;
     border: none;

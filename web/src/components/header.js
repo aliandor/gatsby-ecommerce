@@ -9,7 +9,7 @@ const Header = () => (
     <Wrapper>
       <h1>
         <Link to="/">
-          Dev<span>Stickers</span>
+          <span>Sticker</span>Dev
         </Link>
       </h1>
       <Cart className="snipcart-checkout">
